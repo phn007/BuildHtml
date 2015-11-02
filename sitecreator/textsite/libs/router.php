@@ -52,7 +52,7 @@ class Map extends Object {
 	public static function dispatch( $params = false ) {
 		//run when find a matching route
 		$path = explode( '#', self::$path );
-		$controller = $path[0];
+		$controller = strtolower( $path[0] );
 		$action = $path[1];
 
 		//include the matching controller
