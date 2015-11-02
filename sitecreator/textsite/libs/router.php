@@ -52,7 +52,7 @@ class Map extends Object {
 	public static function dispatch( $params = false ) {
 		//run when find a matching route
 		$path = explode( '#', self::$path );
-		$controller = strtolower( $path[0] );
+		$controller = $path[0];
 		$action = $path[1];
 
 		//include the matching controller
@@ -90,6 +90,7 @@ class Map extends Object {
 
 	public static function load_controller( $name ) {
 		$controller_path = APP_PATH . 'controllers/' . $name . '_controller.php';
+
 		if ( ! file_exists(  $controller_path ) ) 
 		{
 			$msg = '<span style="color:red">The file';

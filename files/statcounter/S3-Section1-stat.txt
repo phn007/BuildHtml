@@ -36,4 +36,4 @@ https://s3-us-west-2.amazonaws.com/garn|10677850#46f12706
 https://s3-us-west-2.amazonaws.com/garw|10677851#2154c784
 https://s3-us-west-2.amazonaws.com/gato|10677852#909a836e
 https://s3-us-west-2.amazonaws.com/gein|10677853#f65b38fd
-https://localhost:8001|10677853#f65b38fd
+http://localhost:8001|10677853#f65b38fd

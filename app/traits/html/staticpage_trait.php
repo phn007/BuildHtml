@@ -10,7 +10,7 @@ trait StaticPage {
 	function runBuildStaticPage( $pageName ) {
 		$projectName = $this->config['project'];
 		$siteDirName = $this->config['site_dir'];
-		$controller = 'StaticPage';
+		$controller = 'staticpage';
     	$action = $pageName;
 		$command  = 'php '. WT_BASE_PATH . 'buildhtml/app.php ';
 		$command .= $projectName . ' ';

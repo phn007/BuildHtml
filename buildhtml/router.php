@@ -17,7 +17,6 @@ class Map extends Object {
 	}
 
 	static function load_controller( $name ) {
-		$name = strtolower( $name );
 		$controller_path = APP_PATH . 'controllers/' . $name . '_controller.php';
 		if ( ! file_exists(  $controller_path ) ) {
 			$msg = "router -> load_controller: ";
@@ -182,6 +181,10 @@ trait LayoutAndContent {
 	}
 
 	static function viewPath( $controller, $action ) {
+		echo "\n\n";
+		echo "controller: " . $controller . " Action: " . $action;
+		echo "\n\n";
+		die();
 		if ( empty( self::$user_vars['view'] ) ) {
 			$msg = '<span style="color:red">The view file of<strong> ' . $controller . ' controller</strong>';
 			$msg .= ' is not defined';
