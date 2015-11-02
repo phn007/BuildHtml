@@ -1,7 +1,3 @@
-configs/*
-!configs/demo.csv
-!configs/demo.ini
-files/statcounter/*
 .DS_Store
 sitecreator/textsite/app/views/bb/assets/.sass-cache/*
 sitecreator/textsite/app/views/bb1-1/assets/.sass-cache/*
