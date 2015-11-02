@@ -1,0 +1,35 @@
+.categories {
+	.link-content {
+		@include clearfix;
+		.item {
+			@include clearfix;
+			//Tablet View
+			@include media(min-width $min-tablet max-width $max-tablet, 12) {
+				@include span-columns(6);
+				@include omega(2n);
+			}
+			//Desktop View
+			@include media($min-desktop) {
+				@include span-columns(4);
+				@include omega(3n);
+			}
+		}
+	}
+}
+
+.categories {
+	margin-bottom: 50px;
+	.link-content {
+		margin-top: 20px;
+		.item {
+			padding-bottom: 5px;
+			a {
+				text-decoration: none;	
+				color: palette(bg, xx-dark);
+				&:hover {
+					color: palette(primary-red, base);
+				}
+			}
+		}
+	}
+}

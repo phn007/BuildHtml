@@ -1,0 +1,12 @@
+.page-container {
+	@include outer-container;
+	margin-top: 40px;
+
+	a {
+		text-decoration: none;
+		color: transparentize(black, 0.15);
+		&:hover {
+			color: $base-color;
+		}
+	}
+}

@@ -1,0 +1,179 @@
+.product-info {
+	margin-top: 30px;
+	background: palette(dark-gray, base);
+	color: palette(dark-gray, x-light);
+	.product-head {
+		background: darken(palette(dark-gray, base), 10%);
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
+	
+	.info-content {
+		padding-bottom: 10px;
+    h4 {
+      margin-bottom: 10px;// video
+    }
+	}
+}
+
+
+
+.vertical-tabs-container {
+	margin-top: 20px;
+  ///////////////////////////////////////////////////////////////////////////////////
+  $base-border-color: gainsboro !default;
+  $base-border-radius: 3px !default;
+  $base-background-color: white !default;
+  $base-line-height: 1.5em !default;
+  $base-spacing: 1.5em !default;
+  $base-accent-color: #477DCA !default;
+  $base-link-color: $base-accent-color !default;
+  $dark-gray: #333 !default;
+  $medium-screen: em(640) !default;
+  $base-font-color: $dark-gray !default;
+  
+  li {
+    list-style: none;
+  }
+
+  p {
+    //color: $base-font-color;
+	color: palette(dark-gray, x-light);
+    line-height: $base-line-height;
+	font-size: em(12px);
+  }
+
+  a {
+    text-decoration: none;
+    color: $base-link-color;
+  }
+  //////////////////////////////////////////////////////////////////////////////////
+
+  $tab-border-color: $base-border-color;
+  $tab-border: 1px solid $tab-border-color;
+  $tab-border-radius: $base-border-radius;
+  $tab-content-background: lighten($tab-border-color, 10%);
+  $tab-active-color: $tab-content-background;
+  $tab-inactive-color: $base-background-color;
+  $vertical-tabs-height: em(300);
+  $vertical-tab-mode: $medium-screen;
+
+  @include clearfix;
+  border-radius: $tab-border-radius;
+  //border: $tab-border;
+  margin-bottom: $base-spacing;
+  overflow: hidden;
+
+  .vertical-tabs {
+    display: none;
+
+    @include media($vertical-tab-mode) {
+      //background-color: $tab-inactive-color;
+      display: inline;
+      float: left;
+      height: $vertical-tabs-height;
+      width: 20%;
+    }
+  }
+
+  .vertical-tab {
+    @include media($vertical-tab-mode) {
+      //border-bottom: $tab-border;
+      border-bottom: 1px solid lighten(palette(dark-gray, base), 5%);
+      display: block;
+      font-weight: bold;
+      margin-right: -1px;
+      padding: ($base-spacing / 2) ($gutter / 2);
+
+      &.is-active {
+        //background-color: $tab-content-background;
+        background-color: lighten(palette(dark-gray, base), 2%);
+        margin-right: -1px;
+      }
+    }
+  }
+
+  a.vertical-tab-accordion-heading,
+  a.vertical-tab {
+    //color: $dark-gray;
+	color: palette(dark-gray, x-light);
+  }
+
+  .vertical-tab:focus {
+    outline: none; 
+  }
+
+  .vertical-tab-content-container {
+    display: block;
+    margin: 0 auto;
+
+    & a:focus { 
+      outline: none; 
+    }
+
+    @include media($vertical-tab-mode) {
+      @include size(80% $vertical-tabs-height);
+      //background-color: $tab-content-background;
+      display: inline-block;
+    }
+  }
+
+  .vertical-tab-content {
+    //background-color: $tab-content-background;
+    background-color: lighten(palette(dark-gray, base), 2%);
+    padding: $base-spacing $gutter;
+
+    @include media($vertical-tab-mode) {
+      border: none;
+      display: none;
+    }
+  }
+
+  .vertical-tab-accordion-heading {
+    //background-color: $tab-inactive-color;
+    //border-top: $tab-border;
+    border-top: 1px solid lighten(palette(dark-gray, base), 5%);
+    cursor: pointer;
+    display: block;
+    font-weight: bold;
+    padding: $base-spacing / 2 $gutter / 2;
+
+    &:focus,
+    &:hover {
+      //color: $base-accent-color;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    &.is-active {
+      //background: $tab-active-color;
+      border-bottom: none;
+    }
+
+    @include media($vertical-tab-mode) {
+      display: none;
+    }
+  }
+}
+
+// Based on code by Jett Miller jettmiller.net
+
+
+.product-head {
+  h2 {
+    font-size: em(16px);
+  }
+}
+
+.ad {
+  h3 {
+    font-size: em(14px);
+    margin-bottom: 10px;
+  }
+  p {
+    margin-bottom: 10px;
+  }
+}
+

@@ -1,0 +1,219 @@
+header {
+	margin-bottom: 20px;
+}
+.header-container {
+	@include clearfix;
+	@include outer-container;
+	position: relative;
+	padding-left: 1em;
+	padding-right: 1em;
+}
+
+//Header Color
+//==================
+$navigation-background: white;
+$navigation-color: darken(white, 90%);
+$navigation-height: 60px;
+
+$phone-menu-bg: palette(dark-gray, base);
+$phnoe-menu-li-bg: #484848;
+
+$site-info-color: palette(dark, base);
+//$hover-color: #F47B7B;
+$hover-color: darken(palette(primary-red, light), 10%);
+$top-header-bg: palette(dark-gray, base);
+
+/* Layout Element Colors
+================================ */
+.top-header {
+	background: $top-header-bg;
+	ul.topmenu {
+		margin: 0;
+		padding: 0;
+		display: block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		float: none;
+		text-align: center;	
+		li {
+			display: inline-block;
+			padding-right: 1em;
+			a {
+				color: lighten($top-header-bg, 30%);
+				display: inline-block;
+				font-size: 11px;
+				text-decoration: none;
+				text-transform: uppercase;
+				&:hover {
+					color: $hover-color;
+				}
+			}
+		}
+		@include media ($min-tablet) {
+			float: left;
+		}		
+	}
+	ul.top-social {
+		margin: 0;
+		padding: 0;
+		display:block;
+		display: block;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		float: none;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			padding-right: 10px;
+			
+			a {
+				color: lighten($top-header-bg, 30%);
+				display: inline-block;
+				font-size: 12px;
+				text-decoration: none;
+				text-transform: uppercase;
+				&:hover {
+					color: $hover-color;
+				}
+			}
+			
+		}
+		@include media ($min-tablet) {
+			float: right;
+			li {
+				padding-right: 4px;
+			}
+		}
+	}
+}
+
+.site-info {
+	background: #E6E6E6;
+	min-height: 80px;
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	.site-info-wrapper {
+		@include clearfix;
+		@include outer-container;
+		position: relative;
+	}
+	a {
+		text-transform: uppercase;
+		color: $site-info-color;
+		font-size: 35px;
+		font-weight: bold;
+		text-decoration: none;
+	}
+}
+
+.navigation {
+	background-color: $phone-menu-bg;
+	@include media ($min-tablet) {
+		background-color: $navigation-background;
+		border-top: 1px solid darken($navigation-background, 10%);
+		border-bottom: 1px solid darken($navigation-background, 10%);
+	}
+	
+	a {
+		text-decoration: none;
+	}
+
+	.navigation-wrapper {
+		@include clearfix;
+		@include outer-container;
+		position: relative;
+	}
+
+	.logo {
+		color: white;
+		font-weight: bold;
+		float: left;
+		line-height: $navigation-height;
+		display: block;
+		//padding-left: 1em;
+		
+		@include media ($min-tablet) {
+			display: none;
+		}
+	}
+
+	//Menu button
+	.navigation-menu-button {
+		@media screen and (max-width: $max-phone) {
+			color: white;
+			font-weight: bold;
+			display: block;
+			float: right;
+			line-height: $navigation-height;
+			margin: 0;
+			//	padding-right: 1em;
+		}
+		
+		@include media ($min-tablet) {
+			display:none;
+		}
+	}
+
+	ul.navigation-menu {
+		-webkit-transform-style: preserve-3d; // stop webkit flicker
+		clear: both;
+		display: none;
+		margin: 0 auto;
+		padding: 0;
+		.icon {
+			font-size: 24px;
+		}
+
+		@include media ($min-tablet) {
+			display:block;
+			padding-top: 20px;
+			padding-bottom: 20px;	
+		}
+	}
+
+	// The nav items
+	ul li {
+		@media screen and (max-width: $max-phone) {
+			background: $navigation-background;
+			display: block;
+			text-align: right;
+			padding-right: 1em;
+			line-height: $navigation-height;
+			background: $phnoe-menu-li-bg;
+			border-bottom: 1px solid lighten($phnoe-menu-li-bg, 20%);
+			a {
+				color: lighten($phnoe-menu-li-bg, 70%);
+				display: inline-block;
+				width: 100%;
+				
+				&:hover {
+					color: $hover-color;
+				}
+			}
+		}
+		
+		@include media ($min-tablet) {
+			display: inline-block;
+			padding-right: 1em;
+			padding-left: 1em;
+			border-right: 1px solid lighten($navigation-color, 75%);
+			&:last-of-type { 
+				border-right: 0px solid lighten($navigation-color, 75%);
+			}
+			&:first-of-type {
+				padding-left: 0;
+			}
+			a {
+				color: $navigation-color;
+				text-transform: uppercase;
+				font-size: 13px;
+				font-weight: bold;
+				&:hover {
+					color: $hover-color;
+				}
+			}
+		}	
+	}
+}

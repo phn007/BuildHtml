@@ -1,0 +1,19 @@
+@include media($min-desktop) {
+	#product-content {
+		@include span-columns(9);
+	}
+
+	#product-sidebar {
+		@include span-columns(3);
+	}
+}
+
+@include media(min-width $min-tablet max-width $max-tablet, 12) {
+	#product-content {
+		@include span-columns(9);
+	}
+
+	#product-sidebar {
+		@include span-columns(3);
+	}	
+}

@@ -1,0 +1,128 @@
+.header {
+	@include outer-container;
+	text-align: center;
+
+	header {
+		padding: 20px 0 20px 0;
+		a {
+			text-decoration: none;
+      color: transparentize(black, 0.15);
+      font-size: 34px;
+      font-weight: bolder;
+		}
+	}
+}
+
+//Navigation
+$horizontal-bar-mode: $max-tablet;
+$large-screen: em(860) !default;
+$navigation-height: 20px;
+$navigation-padding: 1em;
+
+$navigation-background: #FFFFFF;
+$navigation-color: transparentize(black, 0.15);
+$navigation-color-hover: $base-color;
+
+div.navigation {
+  background-color: $navigation-background;
+  //min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  margin-bottom: 20px;
+
+  .navigation-wrapper {
+    @include clearfix;
+    position: relative;
+    z-index: 9999;
+  }
+
+  // Mobile view
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    font-weight: 700;
+    //line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    z-index: 9999999;
+    @include media ($horizontal-bar-mode) {
+      //float: left;
+    }
+  }
+
+  ul.navigation-menu {
+    -webkit-transform-style: preserve-3d; // stop webkit flicker
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      //line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      font-weight: 400;
+      font-size: 12px;
+      text-decoration: none;
+
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }  
+}

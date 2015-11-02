@@ -1,0 +1,109 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+////Font Stacks
+//$font-url--google        : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+//$font-family--primary    : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//
+////Font Weights
+//$font-weight--thin       : 100;
+//$font-weight--light      : 300;
+//$font-weight--medium     : 400;
+//$font-weight--bold       : 700;
+//$font-weight--ultra-bold : 900;
+//
+////Path to Assets
+//$path--rel      : "../img";
+
+
+
+//Media Screen
+$min-phone: 1px;
+$max-phone: 480px;
+$min-tablet: 481px;
+$max-tablet: 768px;
+$min-desktop: 769px;
+
+
+
+//Visual Grid Color
+//==================
+$ltblue: #D5EEFB;
+$midblue: #AADBF5;
+
+//Base Color: Our Little Projects and State of the Owner
+$dark: #354458;
+$skyblue1: #3A9AD9;
+$skyblue2: #4298B5;
+$green1: #29ABA4;
+$green2: #92B06A;
+$red1: #DF6C5B;
+$red2: #D15A2F;
+$yellow1: #D59426;
+
+//Base Black - Blue //*** Color 9 ***
+$base-color-1: #181819;
+$base-color-2: #29AED1;
+
+//Base Red-Blue //*** Color 8 ***
+$base-color-1: lighten(#F23534, 4%);
+$base-color-2: lighten(#0B5EAD, 4%);
+
+//*** Color 7 ***
+$base-color-1: $dark;
+$base-color-2: $yellow1;
+
+//*** Color 6 ***
+$base-color-1: $dark;
+$base-color-2: $red2;
+
+//*** Color 5 ***
+$base-color-1: $dark;
+$base-color-2: $red1;
+
+//*** Color 4 ***
+$base-color-1: $dark;
+$base-color-2: $green2;
+
+//*** Color 3 ***
+$base-color-1: $dark;
+$base-color-2: $green1;
+
+//*** Color 2 ***
+$base-color-1: $dark;
+$base-color-2: $skyblue2;
+
+//*** Color 1 ***
+$base-color-1: $dark;
+$base-color-2: $skyblue1;
+
+
+
+
+
+
+$base-color-3: #FFFFFF;
+
+//$visit-store-color: #6DBE14;
+$visit-store-color: $red1;
+
+//Header Color
+$header-color: $base-color-3;
+$top-header-bg: $base-color-1;
+$nav-bg: $base-color-2;
+
+//Footer Color
+$footer-bg: $base-color-2;
+
+
+$price-color: $base-color-2;
+$button-bg: $base-color-2;
+$hover-color: $base-color-2;
+$tab-color: $base-color-2;
+
+//Cycle Slide Show
+$cycle-bg: #DAE1E7;
+
+

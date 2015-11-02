@@ -1,0 +1,1 @@
+a:3:{s:9:"urlFormat";s:54:"http://shop.nordstrom.com/c/womens-dresses-shop?page=2";s:8:"lastPage";s:2:"55";s:6:"catUrl";s:62:"http://shop.nordstrom.com/c/womens-dresses-shop?origin=leftnav";}

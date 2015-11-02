@@ -1,0 +1,67 @@
+// ==========================================================================
+// Base Styles
+// ==========================================================================
+
+* {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+body {
+	background: #FFFFF;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 13px;
+	color: transparentize(black, 0.6);
+}
+
+hr {
+	@include span-columns(12);
+	border: none;
+	height: 1px;
+	background-color: transparentize( black, 0.85);
+	//margin: 20px 0;
+}
+
+
+//Accordion
+.accordion-tabs {
+	$large-screen: em(860) !default;
+
+	@include clearfix;
+	padding: 0;
+
+	.tab-header-and-content {
+		list-style: none;
+
+		@include media($large-screen) {
+			display: inline;
+		}
+	}
+
+	.tab-link {
+		display: block;
+		padding-right: 1em;
+
+		@include media($large-screen) {
+			display: inline-block;
+		}
+	}
+
+	.is-active {
+		color: #FFFFFF;
+	}
+
+	.tab-content {
+		display: none;
+		width: 100%;
+
+		@include media($large-screen) {
+			float: left;
+		}
+	}
+
+	a {
+		color: #FFFFFF;
+		text-decoration: none;
+	}
+}

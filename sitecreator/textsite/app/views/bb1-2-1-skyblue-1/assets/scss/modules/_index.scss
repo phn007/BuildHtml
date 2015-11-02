@@ -1,0 +1,35 @@
+// ==========================================================================
+// Placeholder selectors
+// ==========================================================================
+//extends
+@import 'extends';
+
+//main
+@import 'main/header';
+@import 'main/footer';
+@import 'main/main';
+
+//home
+@import 'home/cycle-product-list';
+@import 'home/product-list';
+@import 'home/link-list-home';
+
+//product
+@import 'product/product-detail';
+@import 'product/related-products';
+@import 'product/breadcrumb';
+@import 'product/pagination';
+@import 'product/seo-data';
+
+//Category
+@import 'category/category-list-item';
+@import 'category/pagination';
+
+//Categories
+@import 'categories/link-list';
+@import 'categories/pagination';
+
+//Static Pages
+@import 'static-page/static-page';
+
+

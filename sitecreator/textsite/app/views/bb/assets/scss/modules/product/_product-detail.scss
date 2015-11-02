@@ -1,0 +1,158 @@
+.product-detail {
+	margin-bottom: 1.5em;
+	a {
+		text-decoration: none;
+		color: palette(bg, xx-dark);
+		&:hover {
+			color: darken(palette(primary-red, light), 10%);
+		}
+	}
+	&-content {
+		color: palette(bg, xx-dark);
+		background: white;
+		border-radius: 2px;
+		border: 1px solid darken(palette(bg, base), 8%);
+		.info {
+			font-size: em(14px);
+			.brand {
+				margin-bottom: 10px;
+			}
+			.price {
+				font-size: em(28px);
+				font-weight: 600;
+				padding-bottom: 5px;
+				margin-bottom: 10px;
+				border-bottom: 5px double darken(palette(bg, base), 5%);
+			}
+			p {
+				line-height: em( 22px);
+				margin-bottom: 10px;
+			}
+			.button {
+				display: block;
+				background: lighten(palette(primary-red, base),10%);
+				width: 200px;
+				text-align: center;
+				padding: 10px;
+				border-radius: 3px;
+				@include transition (all 0.2s ease-in-out);
+				a {
+					font-size: em(24px);
+					color: white;
+					font-weight: 600;
+				}
+				&:hover {
+					background: palette(primary-red, base);
+				}
+			}
+		}
+	}
+	
+	//Phone View
+	@media screen and (max-width: $max-phone) {
+		&-content {
+			.image {
+				margin: auto;
+				padding: 5%;
+				max-height: 250px;
+				max-width: 250px;
+				img {
+					width: 100%;
+				}
+			}
+			.info {
+				padding: 5%;
+			}
+		}
+	}
+	
+	//Tablet to Desktop
+	@include media($min-tablet) {
+		&-content {
+			@include clearfix;
+			.image {
+				@include span-columns(4);
+				max-height: 250px;
+				max-width: 250px;	
+				text-align: center;
+				padding: 2%;
+				img {
+					width: 100%;
+				}
+			}
+			.info {
+				@include span-columns(8);
+				padding-right: 10px;
+				padding-bottom: 20px;
+				
+				h1 {
+					margin: 0;
+					padding-top: 2%;
+					padding-bottom: 6px;
+				}
+			}
+		}
+	}
+}
+
+
+ul.product-social {
+	display: block;
+	padding: 0;
+	margin-bottom: 10px;
+	li {
+		display: inline-block;
+		border: 1px solid palette(bg, dark );
+		padding: 6px;
+		@include transition (all 0.2s ease-in-out);
+		a {
+			font-size: 12px;
+			text-decoration: none;
+			color: palette(bg, xx-dark);
+			i {
+				margin-right: 4px;
+			}
+		}
+		&:hover {
+			border: 1px solid white;
+			a {
+				color: white;
+				i {
+					color: white;
+				}
+			}
+		}
+	}
+	.facebook {
+		i {
+			color: #435F9F;
+		}
+		&:hover {
+			background: #435F9F;
+		}
+	}
+	.twitter {
+		i {
+			color: #00AAF0;
+		}
+		&:hover {
+			background: #00AAF0;
+		}				
+	}
+	.google-plus {
+		i {
+			color: #E04B34;
+		}
+		&:hover {
+			background: #E04B34;
+		}				
+	}
+	.pinterest {
+		i {
+			color: #CE1F21;
+		}
+		&:hover {
+			background: #CE1F21;
+		}				
+	}
+}

@@ -1,0 +1,40 @@
+.footer {
+	margin-top: 20px;
+	background-color: #272727;
+	padding: 10px;
+
+	#footer-container {
+		@include outer-container;
+		padding: 20px 0 20px 0;
+		color: transparentize( white, 0.5);
+
+		a {
+			text-decoration: none;
+			color: transparentize( white, 0.5);
+		}
+
+		#hr-footer {
+			background-color: transparentize( white, 0.85);
+			margin: 10px 0 10px 0;
+		}
+
+		#top-footer {
+			@include span-columns(12);
+			ul {
+				list-style-type: none;
+			}
+			#footer-page {
+				@include span-columns(6 of 12);
+				text-align: right;
+			}
+
+			#footer-category {
+				@include span-columns(6 of 12);
+			}
+		}
+
+		#bottom-footer {
+			text-align: center;
+		}
+	}
+}

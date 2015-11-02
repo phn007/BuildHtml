@@ -1,0 +1,164 @@
+$horizontal-bar-mode: $max-tablet;
+
+header{
+  //background: $header-color;
+  background: #ECECEC;
+}
+
+#head {
+    @include outer-container;
+    padding: 20px 20px;
+    text-align: center;
+
+    #logo {
+      a {
+        font-size: 30px;
+        font-weight: bold;
+        text-decoration: none;
+        color: transparentize(black, 0.2);
+      }
+    }
+    #description {
+        color: transparentize(black, 0.4);
+        font-size: 12px;
+        margin-top: 10px;
+    }
+}
+
+
+
+
+//Navigation
+$large-screen: em(860) !default;
+
+$navigation-height: 55px;
+$navigation-padding: 1em;
+
+$navigation-background: $nav-bg;
+$navigation-color: transparentize(white, 0.3);
+$navigation-color-hover: white;
+
+
+
+
+div.navigation {
+  background-color: $navigation-background;
+  //border-bottom: 1px solid darken($navigation-background, 10);
+  min-height: $navigation-height;
+  width: 100%;
+  z-index: 999;
+
+  .navigation-wrapper {
+    @include clearfix;
+    @include outer-container;
+    position: relative;
+    z-index: 9999;
+  }
+
+    .logo {
+        float: left;
+        padding-left: $navigation-padding;
+        padding-right: 2em;
+        color: $navigation-color;
+        font-size: 24px;
+
+        #home-icon {
+            line-height: $navigation-height;
+        }
+    }
+
+  // Mobile view
+
+  .navigation-menu-button {
+    color: $navigation-color;
+    display: block;
+    float: right;
+    font-weight: 700;
+    line-height: $navigation-height;
+    margin: 0;
+    padding-right: 1em;
+    //text-transform: uppercase;
+
+    @include media ($horizontal-bar-mode) {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      color: $navigation-color-hover;
+    }
+  }
+
+  // Nav menu
+
+  nav {
+    float: none;
+    min-height: $navigation-height;
+    z-index: 9999999;
+
+    @include media ($horizontal-bar-mode) {
+      float: left;
+    }
+  }
+
+  ul.navigation-menu {
+    -webkit-transform-style: preserve-3d; // stop webkit flicker
+    clear: both;
+    display: none;
+    margin: 0 auto;
+    overflow: visible;
+    padding: 0;
+    width: 100%;
+    z-index: 9999;
+
+    &.show {
+      display: block;
+    }
+
+    @include media ($horizontal-bar-mode) {
+      display: inline;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  // The nav items
+
+  ul li.nav-link {
+    background: $navigation-background;
+    display: block;
+    line-height: $navigation-height;
+    overflow: hidden;
+    padding-right: 0.8em;
+    text-align: right;
+    width: 100%;
+    z-index: 9999;
+
+    @include media ($horizontal-bar-mode) {
+      background: transparent;
+      display: inline;
+      line-height: $navigation-height;
+      text-decoration: none;
+      width: auto;
+    }
+
+    a {
+      color: $navigation-color;
+      display: inline-block;
+      font-weight: 400;
+      font-size: 14px;
+      text-decoration: none;
+
+      @include media ($horizontal-bar-mode) {
+        padding-right: 1em;
+      }
+
+      &:focus,
+      &:hover {
+        color: $navigation-color-hover;
+      }
+    }
+  }  
+}
+
+

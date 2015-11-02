@@ -1,0 +1,29 @@
+// ==========================================================================
+// Placeholder selectors
+// ==========================================================================
+//extends
+@import 'extends';
+
+//main
+@import 'main/header';
+@import 'main/footer';
+
+//home
+@import 'home/cycleSlideShow';
+@import 'home/productList';
+
+//product
+@import 'product/breadcrumb';
+@import 'product/productDetail';
+@import 'product/relatedProducts';
+@import 'product/searchKeyword';
+@import 'product/pagination';
+
+//Category
+@import 'category/categoryItems';
+
+//Categories
+@import 'categories/categories';
+
+//Static Pages
+@import 'static-page/page.scss';

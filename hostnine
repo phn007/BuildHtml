@@ -1,0 +1,119 @@
+#!@php_bin@
+<?php
+/**
+ * This is an example with Console_Getoptplus::getoptplus() set to return
+ * an associative array with option names converted to their long names if possible.
+ *
+ * Examples to run on the command line:
+ * #getoptplusa --help
+ * #getoptplusa -h
+ * #getoptplusa --foo -b car -c
+ * #getoptplusa --foo -b car -c param1
+ * #getoptplusa --foo -b car -cbus param1
+ * #getoptplusa --foo -b car -c=bus param1
+ * #getoptplusa --bar car param1 param2
+ * #getoptplusa --bar car -- param1 param2
+ * #getoptplusa --bar=car param1 param2
+ */
+
+require_once dirname( __FILE__ ) . '/_console/GetoptPlus.php';
+
+try {
+    $config = array(// /
+
+         'header' => array(
+            '----------------------------',
+            '*** Webtools Development ***',
+            '----------------------------',
+            'Define variables in config.ini file before run a script',
+            ''
+         ),
+
+         'usage' => array(
+            '*** Get Account Infomation ***',
+            'accounts get accountName all ( all accounts )',
+            'accounts get accountName domain.com',
+            '',
+            '*** Termainate Accounts ***',
+            'accounts terminate accountName domain.com',
+            '',
+            '*** Create Account ***',
+            'accounts create accountName domain.com username password "location" package',
+            '',
+            '*** Modify Account ***',
+            '--quota=2000 --bandwidth=15000 accounts modify accountName domain.com',
+         ),
+
+        'options' => array(
+            array(
+               'long' => 'row',
+               'type' => 'mandatory',
+               'short' => 'r',
+               'desc' => array('row number', '1-3, 3' )
+            ),
+            array(
+               'long' => 'sort',
+               'type' => 'mandatory',
+               'short' => 's',
+               'desc' => array('sort by column', 
+                  'domain', 
+                  
+                  'username',
+                  'ip', 
+                  'location',
+                  'rquota', 
+                  'rbandwidth', 
+                  'rtotal_disk', 
+                  'rtotal_bw',
+                  'status'
+                  )
+            ),
+            array(
+               'long' => 'ascending',
+               'type' => 'noarg',
+               'short' => 'a',
+               'desc' => array('ascending sorting' )
+            ),
+            array(
+               'long' => 'descending',
+               'type' => 'noarg',
+               'short' => 'd',
+               'desc' => array('descending sorting' )
+            ),
+            array(
+               'long' => 'quota',
+               'type' => 'mandatory',
+               'short' => 'q',
+               'desc' => array('quota int', '2000' )
+            ),
+            array(
+               'long' => 'bandwidth',
+               'type' => 'mandatory',
+               'short' => 'b',
+               'desc' => array('bandwidth', '15000' )
+            )
+            
+         ),
+
+        'parameters' => array(
+            '<get param1> account',
+            '<get param2> domain'
+         ),
+        );
+
+    $options = Console_Getoptplus::getoptplus($config, 'short2long', true);
+
+    include 'libs/options.php';
+    $controller = 'hostnine';
+
+    $opt = new Options();
+    $options = $opt->verifyOptions( $controller, $options );
+
+    include 'appindex.php';
+}
+catch(Console_GetoptPlus_Exception $e) {
+    $error = array($e->getCode(), $e->getMessage());
+    print_r($error);
+}
+
+?>

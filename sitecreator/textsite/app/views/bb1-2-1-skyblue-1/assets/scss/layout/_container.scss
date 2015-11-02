@@ -1,0 +1,22 @@
+// ==========================================================================
+// Sticky Footer
+// ==========================================================================
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.main-wrapper {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: -130px; 
+}
+.main-wrapper:after {
+  content: "";
+  display: block;
+}
+.main-footer, .main-wrapper:after {
+  /* .push must be the same height as footer */
+	height: 130px; 
+}

@@ -1,0 +1,2 @@
+<div id="category-container"><?php if ( isset( $category['items'] ) ) echo $category['items']?></div>
+<div id="category-pagination"><?php if ( isset( $category['pagination'] ) ) echo $category['pagination']?></div>

@@ -1,0 +1,86 @@
+#!@php_bin@
+<?php
+/**
+ * This is an example with Console_Getoptplus::getoptplus() set to return
+ * an associative array with option names converted to their long names if possible.
+ *
+ * Examples to run on the command line:
+ * #getoptplusa --help
+ * #getoptplusa -h
+ * #getoptplusa --foo -b car -c
+ * #getoptplusa --foo -b car -c param1
+ * #getoptplusa --foo -b car -cbus param1
+ * #getoptplusa --foo -b car -c=bus param1
+ * #getoptplusa --bar car param1 param2
+ * #getoptplusa --bar car -- param1 param2
+ * #getoptplusa --bar=car param1 param2
+ */
+
+require_once dirname( __FILE__ ) . '/_console/GetoptPlus.php';
+
+try {
+    $config = array(// /
+
+         'header' => array(
+            '----------------------------',
+            '*** Webtools Development ***',
+            '----------------------------',
+            'Define variables in config.ini file before run a script',
+            ''
+         ),
+
+         'usage' => array(
+            '*** Create TextSite ***',
+            'create all csvFilename domain.com',
+            'create code csvFilename domain.com',
+            'create config csvFilename domain.com',
+            'create htaccess csvFilename domain.com',
+            'create sitemap csvFilename domain.com',
+            'create sitemap_index csvFilename domain.com',
+            'create robots csvFilename domain.com',
+            'create theme csvFilename domain.com',
+            'create zip csvFilename domain.com',
+            '',
+            '*** Zip Files ***',
+            'zip csvFilename domain.com',
+            '',
+            '*** Server ***',
+            'server start csvFilename domain.com'
+         ),
+
+        'options' => array(
+            array(
+               'short' => 'r',
+               'type' => 'noarg',
+               'desc' => array('copy route php file: r.php to root' )
+            ),
+            array(
+               'long' => 'zip',
+               'short' => 'z',
+               'type' => 'noarg',
+               'desc' => array('zip files' )
+            )
+        ),
+
+        'parameters' => array(
+            '<param1>',
+            '<param2>'
+         ),
+        );
+
+    $options = Console_Getoptplus::getoptplus($config, 'short2long', true);
+
+    include 'libs/options.php';
+    $controller = 'text';
+
+    $opt = new Options();
+    $options = $opt->verifyOptions( $controller, $options );
+
+    include 'appindex.php';
+}
+catch(Console_GetoptPlus_Exception $e) {
+    $error = array($e->getCode(), $e->getMessage());
+    print_r($error);
+}
+
+?>

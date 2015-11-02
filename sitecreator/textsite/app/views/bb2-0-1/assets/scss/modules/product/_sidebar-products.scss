@@ -1,0 +1,23 @@
+.sidebar-content {
+	img {
+		float: left;
+		margin-right: 5px;
+	}
+	h3 {
+		margin: 0 0 10px 0;
+		padding: 0;
+		font-size: 12px;
+		color: transparentize(black, 0.4);
+	}
+
+	#sidebar-price {
+		font-size: 12px;
+		color: $price-color;
+	}
+
+}
+
+.sidebar-clear {
+	clear: both;
+	margin-bottom: 20px;
+}

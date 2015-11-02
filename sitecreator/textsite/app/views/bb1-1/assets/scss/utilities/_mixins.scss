@@ -1,0 +1,29 @@
+// ==========================================================================
+// Mixins
+// ==========================================================================
+
+@mixin lineAfterText( $bg-text-color: white, $line-color: black ) {
+  position: relative;
+  span {
+    background-color: $bg-text-color;
+    padding-right: 10px;
+  }
+  &:after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    border-top: 1px solid $line-color;
+    z-index: -1;
+  }
+}
+
+@mixin doubleline() {
+	h2 {
+    	border-bottom: 1px solid blue;
+    	box-shadow: 0 1px 0 red;
+	}
+}
+

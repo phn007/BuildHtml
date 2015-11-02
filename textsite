@@ -1,0 +1,99 @@
+#!@php_bin@
+<?php
+/**
+ * This is an example with Console_Getoptplus::getoptplus() set to return
+ * an associative array with option names converted to their long names if possible.
+ *
+ * Examples to run on the command line:
+ * #getoptplusa --help
+ * #getoptplusa -h
+ * #getoptplusa --foo -b car -c
+ * #getoptplusa --foo -b car -c param1
+ * #getoptplusa --foo -b car -cbus param1
+ * #getoptplusa --foo -b car -c=bus param1
+ * #getoptplusa --bar car param1 param2
+ * #getoptplusa --bar car -- param1 param2
+ * #getoptplusa --bar=car param1 param2
+ */
+
+
+require_once dirname( __FILE__ ) . '/_console/GetoptPlus.php';
+
+try {
+    $config = array(// /
+
+         'header' => array(
+            '----------------------------',
+            '*** Webtools Development ***',
+            '----------------------------',
+            'Define variables in config.ini file before run a script',
+            ''
+         ),
+
+         'usage' => array(
+            '[options] [action] [function] [param 1] [param 2]',
+            '-c filename create all',
+            '-c filename create textdb',
+            '-c filename create code',
+            '-c filename create config',
+            '-c filename create htaccess',
+            '-c filename create sitemap',
+            '-c filename create sitemapindex',
+            '-c filename create robots',
+            '-c filename create logo',
+            '-c filename create theme',
+            '-c filename -r create code',
+            '-c filename server start',
+            '-c filename show config',
+            '-c filename calc byproducts 100000',
+            '-c filename calc bydomains 10'
+         ),
+
+        'options' => array(
+
+            array(
+               'long' => 'config',
+               'type' => 'mandatory',
+               'short' => 'c',
+               'desc' => array('path', 'configs/filename.ini' )
+            ),
+
+            array(
+               'long' => 'row',
+               'type' => 'mandatory',
+               'desc' => array('row number', '1-3, 3' )
+            ),
+
+            array(
+               'short' => 'r',
+               'type' => 'noarg',
+               'desc' => array('add route: r.php to root' )
+            ),
+            array(
+               'short' => 'z',
+               'type' => 'noarg',
+               'desc' => array('zip files' )
+            )
+         ),
+
+        'parameters' => array(
+            '<param1> funciton ( create, server )'
+         ),
+        );
+
+    $options = Console_Getoptplus::getoptplus($config, 'short2long', true);
+
+   include 'libs/options.php';
+   $controller = 'textsite';
+
+   $opt = new Options();
+   $options = $opt->verifyOptions( $controller, $options );
+
+   include 'appindex.php';
+}
+catch(Console_GetoptPlus_Exception $e) {
+    $error = array($e->getCode(), $e->getMessage());
+    print_r($error);
+}
+
+?>

@@ -1,0 +1,91 @@
+// ==========================================================================
+// Global Config
+// ==========================================================================
+
+////Font Stacks
+//$font-url--google        : 'http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900';
+//$font-family--primary    : 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//$font-family--secondary  : 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//
+////Font Weights
+//$font-weight--thin       : 100;
+//$font-weight--light      : 300;
+//$font-weight--medium     : 400;
+//$font-weight--bold       : 700;
+//$font-weight--ultra-bold : 900;
+//
+////Path to Assets
+//$path--rel      : "../img";
+
+
+
+//Visual Grid Color
+//==================
+$ltblue: #D5EEFB;
+$midblue: #AADBF5;
+
+//Base Color
+$primary-dark: #2A2A2A;
+$primary-dark-gray: #4F5367;
+$primary-bg: #F5F5F5;
+$primary-red: #EA3A3C;
+
+//Color Usage
+$primary-dark-palette: (
+	xxx-light : lighten( $primary-dark, 80% ), 
+	xx-light  : lighten( $primary-dark, 60% ),
+	x-light   : lighten( $primary-dark, 40% ),
+	light     : lighten( $primary-dark, 20% ),
+	base      : $primary-dark,
+	dark      : darken( $primary-dark, 20% ),
+	x-dark    : darken( $primary-dark, 40% ),
+	xx-dark   : darken( $primary-dark, 60% ),
+);
+
+$primary-dark-gray-palette: (
+	xxx-light : lighten( $primary-dark-gray, 80% ), 
+	xx-light  : lighten( $primary-dark-gray, 60% ),
+	x-light   : lighten( $primary-dark-gray, 40% ),
+	light     : lighten( $primary-dark-gray, 20% ),
+	base      : $primary-dark-gray,
+	dark      : darken( $primary-dark-gray, 20% ),
+	x-dark    : darken( $primary-dark-gray, 40% ),
+	xx-dark   : darken( $primary-dark-gray, 60% ),
+);
+
+$primary-bg-palette: (
+	xxx-light : lighten( $primary-bg, 80% ), 
+	xx-light  : lighten( $primary-bg, 60% ),
+	x-light   : lighten( $primary-bg, 40% ),
+	light     : lighten( $primary-bg, 20% ),
+	base      : $primary-bg,
+	dark      : darken( $primary-bg, 20% ),
+	x-dark    : darken( $primary-bg, 40% ),
+	xx-dark   : darken( $primary-bg, 60% ),
+);
+
+$primary-red-palette: (
+	xxx-light : lighten( $primary-red, 80% ), 
+	xx-light  : lighten( $primary-red, 60% ),
+	x-light   : lighten( $primary-red, 40% ),
+	light     : lighten( $primary-red, 20% ),
+	base      : $primary-red,
+	dark      : darken( $primary-red, 20% ),
+	x-dark    : darken( $primary-red, 40% ),
+	xx-dark   : darken( $primary-red, 60% ),
+);
+
+$color-palettes: (
+	dark   : $primary-dark-palette,
+	dark-gray: $primary-dark-gray-palette,
+	bg: $primary-bg-palette,
+	primary-red: $primary-red-palette,
+);
+
+
+//Media Screen
+$min-phone: 1px;
+$max-phone: 480px;
+$min-tablet: 481px;
+$max-tablet: 768px;
+$min-desktop: 769px;

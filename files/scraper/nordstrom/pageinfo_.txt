@@ -1,0 +1,1 @@
+a:3:{s:7:"catUrl";s:67:"http://shop.nordstrom.com/c/mens-clothing-sportswear?origin=leftnav";s:10:"url_format";s:59:"http://shop.nordstrom.com/c/mens-clothing-sportswear?page=2";s:9:"lastPage";s:2:"44";}

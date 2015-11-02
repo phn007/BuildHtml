@@ -1,0 +1,10 @@
+.pagination {
+	@extend %pagination;
+	.disabled {
+		//@include opacity(0.7);
+		filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  		opacity: 0.7;
+		pointer-events: none; 
+		color: darken(palette(bg, base),8%);
+	}
+}

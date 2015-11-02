@@ -1,0 +1,1 @@
+a:3:{s:9:"urlFormat";b:0;s:8:"lastPage";b:0;s:6:"catUrl";s:90:"http://www.zappos.com/men-suits/CKvXARCu4AHAAQLiAgMBGAI.zso?s=goliveRecentSalesStyle/desc/";}

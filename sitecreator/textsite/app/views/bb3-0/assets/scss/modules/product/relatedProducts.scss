@@ -1,0 +1,78 @@
+$desktop: new-breakpoint(min-width $min-desktop 15);
+
+#related-products {
+	@include outer-container;
+	
+	#hr-related-topic {
+		margin: 50px 0 50px 0;
+	}
+
+	#related-topic {
+		text-align: center;
+		color: transparentize(black, 0.15);
+		margin-bottom: 50px;
+	}
+
+	#related-content {
+		@include clearfix;
+		.related-item {
+			@include clearfix;
+
+			//Mobile View
+			@include media(min-width $min-phone max-width $max-phone, 12) {
+				@include span-columns(6);
+				@include omega(2n);
+			}
+
+			//Tablet View
+			@include media(min-width $min-tablet max-width $max-tablet, 12) {
+				@include span-columns(3);
+				@include omega(4n);
+			}
+		
+			//Desktop View
+			@include media($desktop) {
+				@include span-columns(3);
+				@include omega(5n);
+			}		
+		}
+
+		.related-item {
+			margin-bottom: 40px;
+			a {
+				text-decoration: none;
+				color: transparentize(black, 0.15);
+			}
+
+			.hr-related-item {
+				margin: 10px 0 10px 0;
+			}
+
+			.item-image {
+				background-color: $image-bg-color;
+				padding: 3%;
+				
+				img {
+					width:100%
+				}
+			}
+
+			.item-price {
+				text-align: center;
+				margin-top: 10px;
+				color: $base-color;
+			}
+
+			h3 {
+				margin: 0;
+				font-size: 14px;
+				
+			}
+			
+		}
+	}
+
+	
+
+
+}

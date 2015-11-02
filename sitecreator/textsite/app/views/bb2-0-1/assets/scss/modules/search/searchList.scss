@@ -1,0 +1,33 @@
+#search-list {
+	@include outer-container;
+
+	.search-product-item {
+		@include span-columns(12);
+		background: #FFFFFF;
+		margin-bottom: 20px;
+		padding: 10px;
+
+		.search-product-image {
+			@include span-columns(3 of 12);
+			text-align: center;
+		}
+
+		.search-product-detail {
+			@include span-columns(6 of 12);
+			p {
+				margin-top: 10px;
+			}
+
+		}
+
+		.search-product-price {
+			@include span-columns(3 of 12);
+			#price {
+				margin-bottom: 10px;
+			}
+			//@include reset-display;
+			//@include pad();
+
+		}
+	}	
+}

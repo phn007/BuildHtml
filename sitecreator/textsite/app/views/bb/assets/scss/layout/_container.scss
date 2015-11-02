@@ -1,0 +1,34 @@
+// ==========================================================================
+// Sticky Footer
+// ==========================================================================
+* {
+	margin: 0;
+}
+html, body {
+	height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+	margin-bottom: -130px; 
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+	height: 130px; 
+}
+// .site-footer {
+//   background: orange;
+// }
+
+// ==========================================================================
+// Container
+// ==========================================================================
+.container {
+	@include outer-container;
+	padding-left: 1em;
+	padding-right: 1em;
+}

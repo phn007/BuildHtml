@@ -1,0 +1,175 @@
+// Head Title
+// ======================================================================
+@mixin lineAfterText( $bg-text-color: white, $line-color: black ) {
+  position: relative;
+  span {
+    background: $bg-text-color;
+    padding-right: 10px;
+	 z-index: 9999;
+  }
+  &:after {
+    content:"";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.5em;
+    border-top: 1px solid $line-color;
+    z-index: -1;
+  }
+}
+
+.category-list-head-title {
+	margin-top:em(20px);
+	margin-bottom: em( 20px );
+	padding: 0;
+	@include clearfix;
+
+	h2 {
+		font-size: 100%;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin: 0;
+		padding: 0;
+		color: palette( bg, xx-dark );
+		float: left;		
+		margin-right: 10px;
+	}
+
+	.linetext {
+		$bg:  palette( bg, base );
+		$line-color:  palette( bg, dark );
+		@include lineAfterText($bg, $line-color);
+	}
+
+	a {
+		text-decoration: none;
+		color: palette( bg, xx-dark );
+		&:hover {
+			color: darken(palette(primary-red, light), 10%);
+		}
+	}
+}
+
+// H2 Wide
+.category-list-head-title {
+	h2 {
+		//Mobile view
+		@include media(min-width $min-phone max-width $max-phone, 12) {
+			width: 72%;
+		}
+		//Tablet view
+		@include media(min-width $min-tablet max-width $max-tablet, 12) {
+			width: 82%;
+		}
+		//Desktop View
+		@include media($min-desktop) {
+			width: 90%;
+		}	
+	}
+}
+
+
+// Category List Item - Visual Grid Color
+// ======================================================================
+.category-list-items {
+	//background: $ltblue;;
+	.item {
+		//background: $midblue;
+	}
+}
+
+// Category List Item - Main Layout
+// ======================================================================
+.category-list-items {
+	@include clearfix;
+	.item {
+		@include clearfix;
+		margin-bottom: 20px;
+		.image {
+			float: left;
+			width: 40%;
+			img {
+				width: 100%;
+			}
+		}
+		.info {
+			float: right;
+			width: 60%;
+			padding-left: 5%;
+		}
+	}
+
+	//Tablet View
+	@include media(min-width $min-tablet max-width $max-tablet, 12) {
+		.item {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+	}
+	//Desktop View
+	@include media($min-desktop) {
+		.item {
+			@include span-columns(4);
+			@include omega(3n);
+		}
+	}
+}
+
+// Category List Item - Element
+// ======================================================================
+.category-list-items {
+	.item {
+		.image {
+			img {
+				border: 2px solid palette(bg, dark);
+			}
+		}
+		.info {
+			h3 {
+				margin: 0 0 3% 0;
+				font-size: em(13px);
+				a {
+					color: palette(bg, xx-dark);
+					text-decoration: none;
+					&:hover {
+						color: lighten(palette(primary-red, base), 10%);
+					}
+				}
+			}
+			.brand {
+				font-size: em(12px);
+				margin-bottom: 3%;
+				a {
+					color: palette(bg, xx-dark);
+					text-decoration: none;
+					&:hover {
+						color: lighten(palette(primary-red, base), 10%);
+					}
+				}
+			}
+			.price {
+				font-size: em(14px);
+				color: palette(primary-red, base);
+				font-weight: bold;
+				margin-bottom: 3%;
+			}
+			.button {
+				display: block;
+				background: darken(palette(bg, dark), 10%);
+				width: 70%;
+				text-decoration: none;
+				color: palette(bg, x-light);
+				font-size:90%;
+				padding: 3%;
+				border-radius: 5px;
+				text-align: center;
+				&:hover {
+					background: lighten(palette(primary-red, base), 10%);
+				}
+			}
+		}
+	}
+}
+
+

@@ -1,0 +1,121 @@
+#product-detail {
+	@include outer-container;
+	margin-top: 50px;
+	
+	#product-detail-image {
+		@include span-columns(12);
+	}
+
+	#product-detail-info {
+		@include span-columns(12);
+	}
+
+	@include media($min-desktop) {
+		#product-detail-image {
+			@include span-columns(4);
+		}
+
+		#product-detail-info {
+			@include span-columns(6);
+		}
+	}
+
+	#product-detail-image {
+		background-color: $image-bg-color;
+		text-align: center;
+	}
+
+	#product-detail-info {
+		padding-left: 20px;
+		h2 {
+			font-size: 20px;
+			a {
+				text-decoration: none;
+				color: transparentize(black, 0.15);
+      			
+			}
+		}
+
+		#price {
+			margin: 20px 0 20px 0;
+			#amount {
+				padding: 5px;
+				background-color: $base-color;
+				color: #FFFFFF;
+			}
+		}
+
+		#description {
+		}
+
+		#hr-desc {
+			margin-top: 20px;
+		}
+
+		#button {
+			display: block;
+			margin: 50px 0 30px 0;
+
+			#btn-visit {
+				a {
+					background-color: $base-color;
+					padding: 10px;
+					text-decoration: none;
+					color: #FFFFFF;
+				}
+			}
+		}
+
+		#category {
+			margin-bottom: 10px;
+			a {
+				color: $base-color;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		#brand {
+			margin-bottom: 10px;
+			a {
+				color: $base-color;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		#merchant {
+			margin-bottom: 10px;
+			a {
+				color: $base-color;
+				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+
+		#product-detail-social {
+			ul {
+				padding: 0px;
+				margin: 10px 0 10px 0;
+			}
+			li {
+				display: inline-block;
+				a {
+					color: transparentize(black, 0.15);
+					&:hover {
+						color: $base-color;
+					}
+				}
+			}
+		}
+	}
+}

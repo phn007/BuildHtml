@@ -1,0 +1,96 @@
+#!@php_bin@
+<?php
+/**
+ * This is an example with Console_Getoptplus::getoptplus() set to return
+ * an associative array with option names converted to their long names if possible.
+ *
+ * Examples to run on the command line:
+ * #getoptplusa --help
+ * #getoptplusa -h
+ * #getoptplusa --foo -b car -c
+ * #getoptplusa --foo -b car -c param1
+ * #getoptplusa --foo -b car -cbus param1
+ * #getoptplusa --foo -b car -c=bus param1
+ * #getoptplusa --bar car param1 param2
+ * #getoptplusa --bar car -- param1 param2
+ * #getoptplusa --bar=car param1 param2
+ */
+
+require_once dirname( __FILE__ ) . '/_console/GetoptPlus.php';
+
+try {
+    $config = array(// /
+
+         'header' => array(
+            '----------------------------',
+            '*** Webtools Development ***',
+            '----------------------------',
+            'Define variables in config.ini file before run a script',
+            ''
+         ),
+
+         'usage' => array(
+            '*** Create All  ***',
+            'create all csvFilename',
+            '',
+            '*** Create TextDatabase ***',
+            'create textdb csvFilename',
+            '--module=product create textdb csvFilename',
+            '--module=category create textdb csvFilename',
+            '--module=homepagecat create textdb csvFilename',
+            '',
+            '*** Create TextSite ***',
+            'create textsite csvFilename',
+            '--row=2-4 --module=code create textsite csvFilename',
+            '--row=2-4 --module=config create textsite csvFilename',
+            '--row=2-4 --module=chtaccess create textsite csvFilename',
+            '--row=2-4 --module=sitemap create textsite csvFilename',
+            '--row=2-4 --module=sitemap_index create textsite csvFilename',
+            '--row=2-4 --module=robots create textsite csvFilename',
+            '--row=2-4 --module=theme create textsite csvFilename',
+            '',
+            '*** Create Zip file ( Default method=php )***',
+            '--row=2-4 create zip csvfilename',
+            '',
+            '*** Upload Files ***',
+            '--row=2-4 ftp upload csvFilename',
+         ),
+
+        'options' => array(
+            array(
+               'long' => 'row',
+               'type' => 'mandatory',
+               'desc' => array('row number', '1-3, 3' )
+            ),
+            array(
+               'long' => 'module',
+               'type' => 'mandatory',
+               'desc' => array('module', 'code, config, etc...' )
+            ),
+            array(
+               'long' => 'zip',
+               'short' => 'z',
+               'type' => 'noarg',
+               'desc' => array('zip files', '' )
+            )
+         ),
+
+        'parameters' => array(),
+        );
+
+    $options = Console_Getoptplus::getoptplus($config, 'short2long', true);
+
+    include 'libs/options.php';
+    $controller = 'site';
+
+    $opt = new Options();
+    $options = $opt->verifyOptions( $controller, $options );
+
+    include 'appindex.php';
+}
+catch(Console_GetoptPlus_Exception $e) {
+    $error = array($e->getCode(), $e->getMessage());
+    print_r($error);
+}
+
+?>

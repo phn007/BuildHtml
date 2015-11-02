@@ -1,0 +1,165 @@
+
+hr {
+	@include span-columns(12);
+	border: none;
+	height: 1px;
+	//color: transparentize( black, 0.9 );
+	background-color: transparentize( black, 0.94);
+	margin: 20px 0;
+}
+
+.main-product {
+	@include span-columns(12);
+	margin-bottom: 30px;
+	.image {
+		img {
+			width: 100%;
+		}
+	}
+	.info {
+		a {
+			text-decoration: none;
+		}
+
+		h1 {
+			padding: 0;
+			margin: 0;
+			a {
+				color: transparentize( black, 0.3 );
+				&:hover {
+					color: transparentize( black, 0.1 );
+				}
+			}
+		}
+
+		.brand {
+			a {
+				color: transparentize( black, 0.45 );
+				&:hover {
+					color: transparentize( black, 0.2 );
+				}
+			}
+		}
+
+		.price {
+			color: lighten(black, 30%);
+			font-size: 22px;
+			font-weight: bold;
+		}
+		.button {
+			#butt {
+				display: block;
+				width: 120px;
+				background: $visit-store-color;
+				text-align: center;
+				padding: 8px 0;
+				a {
+					color: transparentize( white, 0.2 );
+					&:hover {
+						color: white;
+					}
+				}
+			}
+
+		}
+		.desc {
+			@include span-columns(12);
+			color: transparentize( black, 0.45 );
+		}
+
+		.product-social {
+			@include span-columns(12);
+		}
+	}
+}
+
+//Desktop View
+//@include media($min-desktop) {
+@include media($min-tablet) {
+	.main-product {
+		.image {
+			@include span-columns(3 of 12);
+		}
+
+		.info {
+			@include span-columns(9 of 12);
+
+			.brand {
+				@include span-columns( 12 );
+			}
+
+			.price {
+				@include span-columns( 2 of 9 );
+				//border: 1px solid #333;
+			}
+			.button {
+				@include span-columns( 7 of 9 );
+				//border: 1px solid #333;
+				@include omega();
+			}	
+		}
+	}
+}
+
+
+
+ul.product-social {
+	display: block;
+	padding: 0;
+	margin-bottom: 10px;
+	li {
+		display: inline-block;
+		border: 1px solid lighten(black, 90%);
+		padding: 6px;
+		@include transition (all 0.2s ease-in-out);
+		a {
+			font-size: 12px;
+			text-decoration: none;
+			color: lighten(black, 50%);;
+			i {
+				margin-right: 4px;
+			}
+		}
+		&:hover {
+			border: 1px solid white;
+			a {
+				color: white;
+				i {
+					color: white;
+				}
+			}
+		}
+	}
+	.facebook {
+		i {
+			color: #435F9F;
+		}
+		&:hover {
+			background: #435F9F;
+		}
+	}
+	.twitter {
+		i {
+			color: #00AAF0;
+		}
+		&:hover {
+			background: #00AAF0;
+		}				
+	}
+	.google-plus {
+		i {
+			color: #E04B34;
+		}
+		&:hover {
+			background: #E04B34;
+		}				
+	}
+	.pinterest {
+		i {
+			color: #CE1F21;
+		}
+		&:hover {
+			background: #CE1F21;
+		}				
+	}
+}
