@@ -181,10 +181,6 @@ trait LayoutAndContent {
 	}
 
 	static function viewPath( $controller, $action ) {
-		echo "\n\n";
-		echo "controller: " . $controller . " Action: " . $action;
-		echo "\n\n";
-		die();
 		if ( empty( self::$user_vars['view'] ) ) {
 			$msg = '<span style="color:red">The view file of<strong> ' . $controller . ' controller</strong>';
 			$msg .= ' is not defined';
