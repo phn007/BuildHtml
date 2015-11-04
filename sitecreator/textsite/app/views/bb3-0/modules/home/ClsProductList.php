@@ -39,7 +39,7 @@ class ClsProductList {
 
 	function _getCategoryLink( $catName ) {
 		$catName = Helper::clean_string( $catName );
-		return $this->getCategoryLink( 'category', $catName ); //see CategoryLink trait
+		return $this->getCategoryLink( 'category', $catName ) . FORMAT; //see CategoryLink trait
 	}
 
 	function _cleanDoubleQuote( $str ) {
