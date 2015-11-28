@@ -1,13 +1,27 @@
 <?php
 class ClsFooter {
 	function createHtml( $data ) {
+		$sub = new SubdomainLinkListAddon();
+		$subdomain = $sub->linkList();
 	?>
 		<footer id="footer-container">
+			<?php 
+			if ( $subdomain ) {
+				echo '<hr id="hr-footer">';
+				echo '<div id="related-site">';
+			 	foreach ( $subdomain as $sub ) {
+			 		$subLink = 'http://' . $sub;
+			 		echo '<a href="' . $subLink . '">' . $sub . '</a>, ';
+			 	}
+			 	echo '</div>';
+			 }
+		 	?>
+		 	<hr id="hr-footer">
 			<div id="top-footer">
 				<ul id="footer-page">
 					<li><a href="<?php echo HOME_URL?>privacy-policy<?php echo FORMAT?>">Privacy Policy</a></li>
-	            	<li><a href="<?php echo HOME_URL?>contact<?php echo FORMAT?>">About us</a></li>
-	            	<li><a href="<?php echo HOME_URL?>about<?php echo FORMAT?>">Contact us</a></li>
+	            	<li><a href="<?php echo HOME_URL?>about-us<?php echo FORMAT?>">About us</a></li>
+	            	<li><a href="<?php echo HOME_URL?>contact-us<?php echo FORMAT?>">Contact us</a></li>
 	        	</ul>
 	        	<ul id="footer-category">
 	            	<li><a href="<?php echo HOME_URL?>categories<?php echo FORMAT?>">All Categories</a></li>
